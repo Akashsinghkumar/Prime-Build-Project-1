@@ -1897,6 +1897,34 @@ img {
   pointer-events: none;
 }
 
+/* Align all hero section containers with the navbar logo grid */
+.page-hero .container,
+.contact-page-hero-container,
+.projects-hero-container,
+.about-hero-split .container,
+.luxury-hero-section .container,
+.govt-hero-section .container {
+  max-width: 1560px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .page-hero .container,
+  .contact-page-hero-container,
+  .projects-hero-container,
+  .about-hero-split .container,
+  .luxury-hero-section .container,
+  .govt-hero-section .container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
 @media (max-width: 991px) {
   .page-hero {
     min-height: 440px;
