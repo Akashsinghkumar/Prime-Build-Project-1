@@ -1,0 +1,993 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gallery | Prime Build Projects - Visual Showcase</title>
+  <meta name="description" content="Explore the Prime Build Projects visual gallery - Landmark luxury residences, resort retreats, water features, landscaping, and critical public infrastructure.">
+  <link rel="icon" type="image/webp" href="assets/images/logo/favicon.webp">
+  
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20241019">
+  <style>
+    /* Premium Single Horizontal Scrolling Category Bar */
+    @media (min-width: 992px) {
+      .gallery-section .container {
+        max-width: 1480px !important;
+      }
+    }
+    .gallery-filter-nav {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      -webkit-overflow-scrolling: touch !important;
+      scroll-behavior: smooth;
+      gap: 6px !important;
+      margin-bottom: 3.2rem;
+      padding: 0.38rem 0.55rem !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(197, 160, 89, 0.32) !important;
+      border-radius: 6px !important;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(197, 160, 89, 0.08) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(197, 160, 89, 0.35) transparent;
+    }
+    /* Subtle, minimal gold scrollbar for smooth horizontal scrolling */
+    .gallery-filter-nav::-webkit-scrollbar {
+      height: 3px;
+    }
+    .gallery-filter-nav::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .gallery-filter-nav::-webkit-scrollbar-thumb {
+      background: rgba(197, 160, 89, 0.35);
+      border-radius: 3px;
+    }
+    .gallery-filter-nav::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-primary);
+    }
+    .gallery-filter-nav a,
+    .gallery-filter-nav button,
+    .gallery-filter-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex: 1 0 auto !important;
+      flex-shrink: 0 !important;
+      white-space: nowrap !important;
+      min-width: max-content !important;
+      padding: 0.52rem 0.95rem !important;
+      font-family: var(--font-body);
+      font-size: 0.72rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.03em !important;
+      text-transform: uppercase !important;
+      color: #383e4c !important;
+      background: transparent !important;
+      border: 1px solid transparent !important;
+      border-radius: 4px !important;
+      text-decoration: none !important;
+      text-align: center !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+    }
+    .gallery-filter-nav a:hover,
+    .gallery-filter-nav button:hover,
+    .gallery-filter-btn:hover {
+      color: #12141a !important;
+      background: rgba(197, 160, 89, 0.12) !important;
+      border-color: rgba(197, 160, 89, 0.45) !important;
+      box-shadow: 0 2px 8px rgba(197, 160, 89, 0.14) !important;
+      transform: translateY(-1px);
+    }
+    .gallery-filter-nav a.active,
+    .gallery-filter-nav button.active,
+    .gallery-filter-btn.active {
+      background: linear-gradient(135deg, #181b24 0%, #0d0f15 100%) !important;
+      color: var(--gold-primary) !important;
+      border: 1px solid var(--gold-primary) !important;
+      box-shadow: 0 3px 10px rgba(10, 12, 16, 0.22), 0 0 10px rgba(197, 160, 89, 0.25) !important;
+      font-weight: 700 !important;
+      padding: 0.52rem 1.05rem !important;
+    }
+    @media (max-width: 1200px) {
+      .gallery-filter-nav {
+        gap: 5px !important;
+        padding: 0.35rem 0.45rem !important;
+      }
+      .gallery-filter-nav a,
+      .gallery-filter-nav button,
+      .gallery-filter-btn {
+        font-size: 0.68rem !important;
+        padding: 0.48rem 0.85rem !important;
+      }
+      .gallery-filter-nav a.active,
+      .gallery-filter-nav button.active,
+      .gallery-filter-btn.active {
+        padding: 0.48rem 0.95rem !important;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .gallery-section .container {
+        max-width: 100% !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+      }
+      .gallery-filter-nav {
+        gap: 4px !important;
+        padding: 0.32rem 0.4rem !important;
+        margin-bottom: 2.5rem !important;
+      }
+      .gallery-filter-nav a,
+      .gallery-filter-nav button,
+      .gallery-filter-btn {
+        font-size: 0.66rem !important;
+        padding: 0.45rem 0.78rem !important;
+      }
+      .gallery-filter-nav a.active,
+      .gallery-filter-nav button.active,
+      .gallery-filter-btn.active {
+        padding: 0.45rem 0.88rem !important;
+      }
+    }
+    @media (max-width: 767px) {
+      .gallery-filter-nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 5px !important;
+        padding: 0.35rem 0.45rem !important;
+        margin-bottom: 2rem !important;
+        scrollbar-width: thin;
+      }
+      .gallery-filter-nav a,
+      .gallery-filter-nav button,
+      .gallery-filter-btn {
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        min-width: max-content !important;
+        width: auto !important;
+        padding: 0.46rem 0.85rem !important;
+        font-size: 0.68rem !important;
+        letter-spacing: 0.02em !important;
+        text-align: center !important;
+      }
+      .gallery-filter-nav a.active,
+      .gallery-filter-nav button.active,
+      .gallery-filter-btn.active {
+        padding: 0.46rem 0.95rem !important;
+      }
+    }
+
+    /* Gallery Image Clickable & Normal View Modal */
+    .gallery-item-card {
+      cursor: pointer !important;
+    }
+
+    .gallery-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .gallery-modal.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .gallery-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 11, 14, 0.92);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      cursor: pointer;
+    }
+
+    .gallery-modal-content {
+      position: relative;
+      z-index: 2;
+      max-width: 90vw;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(22px);
+    }
+
+    .gallery-modal-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      background: rgba(18, 19, 25, 0.85);
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      color: var(--gold-primary, #c5a059);
+      font-size: 1.25rem;
+      line-height: 1;
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .gallery-modal-close:hover {
+      background: var(--gold-primary, #c5a059);
+      color: #0a0b0e;
+      border-color: var(--gold-primary, #c5a059);
+    }
+
+    .gallery-modal-img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      max-height: 85vh;
+    }
+
+    .gallery-modal-img {
+      max-width: 90vw;
+      max-height: 82vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      background: #121319;
+      display: block;
+    }
+
+    .gallery-modal-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(18, 19, 25, 0.85);
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      color: var(--gold-primary, #c5a059);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 100001;
+      outline: none;
+      user-select: none;
+      box-sizing: border-box;
+      font-size: 1.15rem;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .gallery-modal-nav i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .gallery-modal-nav:hover {
+      background: var(--gold-primary, #c5a059);
+      color: #0a0b0e;
+      border-color: var(--gold-primary, #c5a059);
+      box-shadow: 0 0 16px rgba(197, 160, 89, 0.45);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .gallery-modal-prev {
+      left: 24px;
+    }
+
+    .gallery-modal-next {
+      right: 24px;
+    }
+
+    @media (max-width: 767px) {
+      .gallery-modal {
+        padding: 0.75rem;
+      }
+      .gallery-modal-content {
+        transform: translateY(20px);
+      }
+      .gallery-modal-close {
+        top: -40px;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+      }
+      .gallery-modal-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+      }
+      .gallery-modal-prev {
+        left: 10px;
+      }
+      .gallery-modal-next {
+        right: 10px;
+      }
+      .gallery-modal-img {
+        max-width: 94vw;
+        max-height: 80vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SINGLE RESPONSIVE HEADER -->
+  <header class="prime-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper" id="brand-logo-link" aria-label="Prime Build Projects">
+        <img src="assets/images/logo/logo.webp" alt="Prime Build Projects Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Mobile Navigation Toggle -->
+      <input type="checkbox" id="navToggle" class="nav-toggle-checkbox">
+      <label for="navToggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </label>
+
+      <div class="nav-menu-wrapper">
+        <ul class="nav-links-list">
+          <li><a href="index.html" class="nav-link-item" id="nav-home">Home</a></li>
+          <li><a href="about.html" class="nav-link-item" id="nav-about">About Us</a></li>
+          <li><a href="home-resorts.html" class="nav-link-item" id="nav-luxury">Luxury Homes &amp; Resorts</a></li>
+          <li><a href="government-projects.html" class="nav-link-item" id="nav-gov">Government Tenders</a></li>
+          <li><a href="projects.html" class="nav-link-item" id="nav-projects">Projects</a></li>
+          <li><a href="capabilities.html" class="nav-link-item" id="nav-capabilities">Capabilities</a></li>
+          <li><a href="gallery.html" class="nav-link-item active" id="nav-gallery">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link-item" id="nav-contact">Contact Us</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta-btn" id="header-cta-btn">
+          <span>Get In Touch</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-bg">
+        <img src="assets/images/gallery/gallery-hero.webp" alt="Prime Build Architectural Gallery Showcase">
+      </div>
+      <div class="page-hero-gradient"></div>
+      <div class="container">
+        <div class="page-hero-content">
+          <span class="section-tag">OUR GALLERY</span>
+          <h1 class="page-hero-title">
+            BUILT SPACES.<br>
+            <span class="gold-text">REAL IMPACT.</span>
+          </h1>
+          <p class="page-hero-lead">
+            A glimpse of the spaces we have designed, built and delivered with precision, quality and commitment.
+          </p>
+          <div class="page-hero-cta pt-2">
+            <a href="#gallery-grid" class="btn-gold" id="gallery-explore-btn">
+              <span>View Gallery</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY GRID SECTION -->
+    <section class="gallery-section" id="gallery-grid">
+      <div class="container">
+        <!-- Category Filter Navigation -->
+        <div class="gallery-filter-nav" aria-label="Gallery category filters">
+          <button type="button" class="gallery-filter-btn active" data-filter="all">ALL</button>
+          <button type="button" class="gallery-filter-btn" data-filter="luxury-homes">LUXURY HOMES</button>
+          <button type="button" class="gallery-filter-btn" data-filter="resorts-retreats">RESORTS</button>
+          <button type="button" class="gallery-filter-btn" data-filter="interiors">INTERIORS</button>
+          <button type="button" class="gallery-filter-btn" data-filter="landscaping">LANDSCAPING</button>
+          <button type="button" class="gallery-filter-btn" data-filter="water-features">WATER FEATURES</button>
+          <button type="button" class="gallery-filter-btn" data-filter="renovation">RENOVATION</button>
+          <button type="button" class="gallery-filter-btn" data-filter="fabrications">FABRICATIONS</button>
+          <button type="button" class="gallery-filter-btn" data-filter="barricades">BARRICADES</button>
+          <button type="button" class="gallery-filter-btn" data-filter="railings">RAILINGS</button>
+          <button type="button" class="gallery-filter-btn" data-filter="street-lighting">STREET LIGHTING</button>
+        </div>
+
+        <!-- Unified Filterable Gallery Grid (No Category Headings) -->
+        <div class="row g-4 gallery-grid-row" id="galleryGrid">
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="luxury-homes">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/luxury-homes/lh-1.webp" alt="Luxury Home Front Elevation" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="luxury-homes">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/luxury-homes/lh-2.webp" alt="Luxury Home Private Poolside" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="luxury-homes">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/luxury-homes/lh-3.webp" alt="Luxury Home Landscape Garden Lawn" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="luxury-homes">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/luxury-homes/lh-4.webp" alt="Luxury Home Evening Illuminated Architecture" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="resorts-retreats">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/resorts-retreats/rr-1.webp" alt="Luxury Resort Poolside Deck" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="resorts-retreats">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/resorts-retreats/rr-2.webp" alt="Resort Palm Tree Oasis" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="resorts-retreats">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/resorts-retreats/rr-3.webp" alt="Resort Lounge and Cabana Terrace" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="resorts-retreats">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/resorts-retreats/rr-4.webp" alt="Resort Twilight Ambience" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="interiors">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/interior/int-1.webp" alt="Luxury Living Room Interior" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="interiors">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/interior/int-2.webp" alt="Modern Kitchen and Bar Counter" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="interiors">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/interior/int-3.webp" alt="Architectural Marble Staircase" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="interiors">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/interior/int-4.webp" alt="Warm Ambient Lounge Interior" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="landscaping">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/landscaping/land-1.webp" alt="Architectural Garden Stepping Stones" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="landscaping">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/landscaping/land-2.webp" alt="Illuminated Garden Boulevard" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="landscaping">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/landscaping/land-3.webp" alt="Evening Garden Pathway with Ambient Lights" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="landscaping">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/landscaping/land-4.webp" alt="Terrace Garden Pergola Dining" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="water-features">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/water-features/wf-1.webp" alt="Illuminated Dancing Fountains" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="water-features">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/water-features/wf-2.webp" alt="Stone Water Wall Feature" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="water-features">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/water-features/wf-3.webp" alt="Reflecting Pool with Bowls" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="water-features">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/water-features/wf-4.webp" alt="Linear Water Feature with Jets" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="renovation">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/renovation/ren-1.webp" alt="Interior Renovation in Progress" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="renovation">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/renovation/ren-2.webp" alt="Commercial Fit-Out Refurbishment" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="renovation">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/renovation/ren-3.webp" alt="Architectural Framing Upgrade" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="renovation">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/renovation/ren-4.webp" alt="Civil Structure Renovation" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="fabrications">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/fabrication/fab-1.webp" alt="Automated Metal Entrance Gate" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="fabrications">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/fabrication/fab-2.webp" alt="Heavy Steel Canopy Pergola" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="fabrications">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/fabrication/fab-3.webp" alt="Structural Steel Frame Skeleton" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="fabrications">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/fabrication/fab-4.webp" alt="Custom Architectural MS Structure" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="barricades">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/barricades/bar-1.webp" alt="Yellow Heavy-Duty Road Barricades" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="barricades">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/barricades/bar-2.webp" alt="Police Traffic Management Barricades" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="barricades">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/barricades/bar-3.webp" alt="Roadway Perimeter Barricade System" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="barricades">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/barricades/bar-4.webp" alt="Boulevard Traffic Control Infrastructure" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="railings">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/railings/rai-1.webp" alt="Black Highway Bridge Crash Railings" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="railings">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/railings/rai-2.webp" alt="Modern Road Median Railings" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="railings">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/railings/rai-3.webp" alt="High-Security Perimeter Wire Fence" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="railings">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/railings/rai-4.webp" alt="Bridge Walkway Pedestrian Railings" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="street-lighting">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/street-lighting/str-1.webp" alt="Decorative Heritage Highway Light Pole" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="street-lighting">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/street-lighting/str-2.webp" alt="LED High Mast Expressway Poles" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="street-lighting">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/street-lighting/str-3.webp" alt="Smart City Dual Luminaire Poles" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 gallery-grid-item" data-category="street-lighting">
+            <div class="gallery-item-card">
+              <img src="assets/images/gallery/street-lighting/str-4.webp" alt="Urban Avenue Highway Night Lighting" loading="lazy">
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+<!-- GALLERY STATS STRIP -->
+    <section class="gallery-stats-strip">
+      <div class="container">
+        <div class="row g-4 justify-content-between">
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="stat-box">
+              <div class="stat-icon-wrap">
+                <i class="bi bi-buildings stat-icon"></i>
+              </div>
+              <div>
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="stat-box">
+              <div class="stat-icon-wrap">
+                <i class="bi bi-people stat-icon"></i>
+              </div>
+              <div>
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Years Of Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="stat-box">
+              <div class="stat-icon-wrap">
+                <i class="bi bi-shield-check stat-icon"></i>
+              </div>
+              <div>
+                <div class="stat-number">Quality</div>
+                <div class="stat-label">You Can Trust</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="stat-box">
+              <div class="stat-icon-wrap">
+                <i class="bi bi-clock-history stat-icon"></i>
+              </div>
+              <div>
+                <div class="stat-number">On Time</div>
+                <div class="stat-label">Every Time</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-12">
+            <div class="stat-box">
+              <div class="stat-icon-wrap">
+                <i class="bi bi-award stat-icon"></i>
+              </div>
+              <div>
+                <div class="stat-number">Built To Last</div>
+                <div class="stat-label">Built For India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<!-- UNIFIED FOOTER -->
+  <footer class="prime-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <img src="assets/images/logo/logo.webp" alt="Prime Build Projects" class="footer-logo-img">
+          <p class="footer-desc">
+            Prime Build Projects is a multidisciplinary construction and infrastructure company delivering excellence in luxury environments and critical public infrastructure.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/share/1S5uRFsWjD/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://wa.me/message/QNUEMJO4CKOPA1" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.instagram.com/prime_buildprojects?stkn=dnFyZGZ3ODlpeDYx&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="home-resorts.html">Luxury Homes &amp; Resorts</a></li>
+            <li><a href="government-projects.html">Government Tenders</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="capabilities.html">Capabilities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Our Services -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h3 class="footer-heading">Our Services</h3>
+          <ul class="footer-links-list">
+            <li><a href="capabilities.html">Public Infrastructure</a></li>
+            <li><a href="capabilities.html">Landscaping &amp; Beautification</a></li>
+            <li><a href="capabilities.html">Structural Fabrication</a></li>
+            <li><a href="capabilities.html">Water Features</a></li>
+            <li><a href="capabilities.html">Interior Solutions</a></li>
+            <li><a href="capabilities.html">Renovation &amp; Redevelopment</a></li>
+            <li><a href="capabilities.html">External Infrastructure</a></li>
+            <li><a href="capabilities.html">Turnkey Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get In Touch -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-heading">Get In Touch</h3>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <p class="m-0"><a href="tel:+919876543210">+91 98765 43210</a></p>
+              <p class="m-0"><a href="tel:+911204567890">+91 120 456 7890</a></p>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <div>
+              <p class="m-0"><a href="mailto:info@primebuildprojects.in">info@primebuildprojects.in</a></p>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <p class="m-0">B-123, Sector 63, Noida, Uttar Pradesh - 201301, India</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center">
+        <div>&copy; 2024 Prime Build Projects. All Rights Reserved. | Design by <a href="https://izafadigital.com/">Izafa Digital</a></div>
+        <div class="d-flex gap-3 mt-2 mt-sm-0">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightweight Image Slider Modal -->
+  <div id="galleryImageModal" class="gallery-modal" aria-hidden="true" role="dialog" aria-label="Gallery Image View">
+    <div class="gallery-modal-overlay" id="galleryModalOverlay"></div>
+
+    <!-- Previous Image Navigation Button -->
+    <button type="button" class="gallery-modal-nav gallery-modal-prev" id="galleryModalPrevBtn" aria-label="Previous image">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <div class="gallery-modal-content">
+      <button type="button" class="gallery-modal-close" id="galleryModalCloseBtn" aria-label="Close image view">&times;</button>
+      <div class="gallery-modal-img-wrap">
+        <img src="" alt="" class="gallery-modal-img" id="galleryModalImage">
+      </div>
+    </div>
+
+    <!-- Next Image Navigation Button -->
+    <button type="button" class="gallery-modal-nav gallery-modal-next" id="galleryModalNextBtn" aria-label="Next image">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Floating Quick Contact Actions -->
+  <a href="tel:+919876543210" class="floating-action-btn floating-call" aria-label="Call Us">
+    <i class="bi bi-telephone-fill"></i>
+  </a>
+  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="floating-action-btn floating-whatsapp" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Gallery Interactive Filtering & Lightweight Image Slider -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var filterButtons = document.querySelectorAll('.gallery-filter-btn');
+      var galleryItems = document.querySelectorAll('.gallery-grid-item');
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(function (b) {
+            b.classList.remove('active');
+          });
+          this.classList.add('active');
+
+          var selectedCategory = this.getAttribute('data-filter');
+
+          galleryItems.forEach(function (item) {
+            var itemCategory = item.getAttribute('data-category');
+            if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Lightweight Gallery Image Slider Functionality
+      var modal = document.getElementById('galleryImageModal');
+      var modalImg = document.getElementById('galleryModalImage');
+      var closeBtn = document.getElementById('galleryModalCloseBtn');
+      var prevBtn = document.getElementById('galleryModalPrevBtn');
+      var nextBtn = document.getElementById('galleryModalNextBtn');
+      var overlay = document.getElementById('galleryModalOverlay');
+      var galleryCards = document.querySelectorAll('.gallery-item-card');
+
+      var currentIndex = 0;
+      var currentImages = [];
+
+      function getVisibleImages() {
+        var visibleItems = document.querySelectorAll('.gallery-grid-item');
+        var list = [];
+        visibleItems.forEach(function (item) {
+          if (item.style.display !== 'none') {
+            var img = item.querySelector('img');
+            if (img && img.src) {
+              list.push({
+                src: img.src,
+                alt: img.alt || 'Prime Build Gallery Image'
+              });
+            }
+          }
+        });
+        if (list.length === 0) {
+          document.querySelectorAll('.gallery-item-card img').forEach(function (img) {
+            if (img && img.src) {
+              list.push({ src: img.src, alt: img.alt || 'Prime Build Gallery Image' });
+            }
+          });
+        }
+        return list;
+      }
+
+      function showImage(index) {
+        if (!currentImages.length) return;
+        if (index < 0) {
+          currentIndex = currentImages.length - 1;
+        } else if (index >= currentImages.length) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+        var item = currentImages[currentIndex];
+        modalImg.src = item.src;
+        modalImg.alt = item.alt;
+      }
+
+      function openModal(index) {
+        currentImages = getVisibleImages();
+        if (!modal || !modalImg || !currentImages.length) return;
+        showImage(index);
+        modal.classList.add('is-active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!modal || !modalImg) return;
+        modal.classList.remove('is-active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function prevImage() {
+        showImage(currentIndex - 1);
+      }
+
+      function nextImage() {
+        showImage(currentIndex + 1);
+      }
+
+      galleryCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          var img = card.querySelector('img');
+          if (!img) return;
+          currentImages = getVisibleImages();
+          var clickedIndex = currentImages.findIndex(function (item) {
+            return item.src === img.src;
+          });
+          if (clickedIndex === -1) clickedIndex = 0;
+          openModal(clickedIndex);
+        });
+      });
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          prevImage();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          nextImage();
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      if (overlay) {
+        overlay.addEventListener('click', closeModal);
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (!modal || !modal.classList.contains('is-active')) return;
+        if (e.key === 'Escape') {
+          closeModal();
+        } else if (e.key === 'ArrowLeft') {
+          prevImage();
+        } else if (e.key === 'ArrowRight') {
+          nextImage();
+        }
+      });
+
+      // Lightweight Touch Swipe Support for Mobile
+      var touchStartX = 0;
+      var touchEndX = 0;
+      if (modal) {
+        modal.addEventListener('touchstart', function (e) {
+          if (e.changedTouches && e.changedTouches.length > 0) {
+            touchStartX = e.changedTouches[0].screenX;
+          }
+        }, { passive: true });
+
+        modal.addEventListener('touchend', function (e) {
+          if (e.changedTouches && e.changedTouches.length > 0) {
+            touchEndX = e.changedTouches[0].screenX;
+            var diffX = touchEndX - touchStartX;
+            if (Math.abs(diffX) > 45) {
+              if (diffX > 0) {
+                prevImage();
+              } else {
+                nextImage();
+              }
+            }
+          }
+        }, { passive: true });
+      }
+    });
+  </script>
+  <!-- Premium Scroll-Reveal Animations -->
+  <script src="assets/js/animations.js" defer></script>
+</body>
+</html>
