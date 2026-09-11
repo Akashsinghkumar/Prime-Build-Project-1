@@ -7995,8 +7995,7 @@ html.pbp-scroll-ready .pbp-whole-card.pbp-settled {
 
 .capabilities-hero-section {
   position: relative !important;
-  min-height: 260px !important;
-  max-height: 320px !important;
+  min-height: 480px !important;
   background-color: #08090c !important;
   overflow: hidden !important;
   display: flex !important;
@@ -8036,40 +8035,40 @@ html.pbp-scroll-ready .pbp-whole-card.pbp-settled {
   width: 100% !important;
   max-width: 1440px !important;
   margin: 0 auto !important;
-  padding: 42px 32px 28px !important;
+  padding: 105px 32px 65px !important;
 }
 
 .capabilities-hero-content {
-  max-width: 680px !important;
+  max-width: 720px !important;
 }
 
 .capabilities-hero-tag {
   color: #c5a059 !important;
-  font-size: 9.5px !important;
+  font-size: 11px !important;
   font-weight: 700 !important;
-  letter-spacing: 1.8px !important;
+  letter-spacing: 2.2px !important;
   text-transform: uppercase !important;
   display: inline-block !important;
-  margin-bottom: 3px !important;
+  margin-bottom: 4px !important;
 }
 
 .capabilities-hero-tag-rule {
-  width: 24px !important;
+  width: 32px !important;
   height: 1.5px !important;
   background: #c5a059 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 16px !important;
 }
 
 .capabilities-hero-title {
   font-family: var(--font-serif, 'Playfair Display', Georgia, serif) !important;
-  font-size: clamp(1.15rem, 1.6vw, 1.45rem) !important;
-  line-height: 1.22 !important;
+  font-size: clamp(1.9rem, 3vw, 2.75rem) !important;
+  line-height: 1.18 !important;
   font-weight: 500 !important;
   color: #ffffff !important;
   letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
-  margin-bottom: 6px !important;
-  max-width: 600px !important;
+  margin-bottom: 12px !important;
+  max-width: 720px !important;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
 }
 
@@ -8078,32 +8077,32 @@ html.pbp-scroll-ready .pbp-whole-card.pbp-settled {
 }
 
 .capabilities-hero-divider {
-  width: 28px !important;
+  width: 44px !important;
   height: 1.5px !important;
   background: #c5a059 !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 18px !important;
 }
 
 .capabilities-hero-p {
-  font-size: 11px !important;
-  line-height: 1.55 !important;
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
   color: #c7cbcf !important;
   font-weight: 300 !important;
-  margin-bottom: 12px !important;
-  max-width: 440px !important;
+  margin-bottom: 24px !important;
+  max-width: 540px !important;
 }
 
 .capabilities-hero-btn {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 7px !important;
+  gap: 10px !important;
   background: transparent !important;
   border: 1px solid #c5a059 !important;
   color: #c5a059 !important;
-  padding: 6px 14px !important;
-  font-size: 9.5px !important;
+  padding: 10px 22px !important;
+  font-size: 11.5px !important;
   font-weight: 700 !important;
-  letter-spacing: 1.2px !important;
+  letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   border-radius: 0 !important;
   text-decoration: none !important;
