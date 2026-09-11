@@ -96,6 +96,23 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+}
+
+/* Professional photo vibrancy, clarity & rich contrast boost across all showcase images */
+.home-hero-section img,
+.page-hero-bg img,
+.cap-card-img img,
+.home-card-img-box img,
+.gallery-card-img img,
+.proj-card-img-box img,
+.luxury-item-img img,
+.govt-tender-card-img img,
+.story-img-frame img,
+.service-card-lux-img img,
+.projects-featured-img-wrap img {
+  filter: contrast(1.05) brightness(1.02) saturate(1.06);
 }
 
 /* ==========================================================================
@@ -1822,12 +1839,12 @@ img {
    ========================================================================== */
 .page-hero {
   position: relative;
-  min-height: 480px;
+  min-height: clamp(460px, 33vw, 560px);
   display: flex;
   align-items: center;
-  background-color: var(--bg-primary);
+  background-color: #06080b;
   overflow: hidden;
-  padding: 4.5rem 0;
+  padding: 3.5rem 0;
   border-bottom: 1px solid rgba(197, 160, 89, 0.2);
 }
 
@@ -1851,14 +1868,17 @@ img {
   inset: 0;
   z-index: 1;
   overflow: hidden;
+  background-color: #06080b;
 }
 
 .page-hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: heroImageReveal 2s cubic-bezier(0.16, 1, 0.3, 1) both, heroKenBurns 20s ease-in-out 2s infinite alternate;
-  will-change: transform;
+  object-position: right center;
+  display: block;
+  animation: heroImageReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity;
 }
 
 .page-hero-gradient {
@@ -1866,26 +1886,39 @@ img {
   inset: 0;
   background: linear-gradient(
     90deg,
-    #0a0b0e 0%,
-    #0a0b0e 20%,
-    rgba(10, 11, 14, 0.96) 28%,
-    rgba(10, 11, 14, 0.72) 38%,
-    rgba(10, 11, 14, 0.3) 48%,
-    rgba(10, 11, 14, 0.06) 56%,
-    transparent 62%
+    #06080b 0%,
+    #06080b 22%,
+    rgba(6, 8, 11, 0.96) 35%,
+    rgba(6, 8, 11, 0.75) 45%,
+    rgba(6, 8, 11, 0.25) 60%,
+    transparent 78%
   );
   z-index: 2;
   pointer-events: none;
 }
 
 @media (max-width: 991px) {
+  .page-hero {
+    min-height: 440px;
+    padding: 3rem 0;
+  }
+  .page-hero-bg img {
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
   .page-hero-gradient {
     background: linear-gradient(
       180deg,
-      rgba(10, 11, 14, 0.94) 0%,
-      rgba(10, 11, 14, 0.88) 55%,
-      rgba(10, 11, 14, 0.5) 80%,
-      rgba(10, 11, 14, 0.2) 100%
+      rgba(6, 8, 11, 0.94) 0%,
+      rgba(6, 8, 11, 0.88) 55%,
+      rgba(6, 8, 11, 0.5) 80%,
+      rgba(6, 8, 11, 0.25) 100%
     );
   }
 }
@@ -7995,8 +8028,8 @@ html.pbp-scroll-ready .pbp-whole-card.pbp-settled {
 
 .capabilities-hero-section {
   position: relative !important;
-  min-height: 480px !important;
-  background-color: #08090c !important;
+  min-height: clamp(460px, 33vw, 560px) !important;
+  background-color: #06080b !important;
   overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
@@ -8120,8 +8153,8 @@ html.pbp-scroll-ready .pbp-whole-card.pbp-settled {
 
 .projects-hero-section {
   position: relative !important;
-  min-height: 480px !important;
-  background-color: #08090c !important;
+  min-height: clamp(460px, 33vw, 560px) !important;
+  background-color: #06080b !important;
   overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
@@ -8283,4 +8316,23 @@ html.pbp-scroll-ready .pbp-whole-card.pbp-settled {
   background: var(--gold-primary, #c5a059) !important;
   border-radius: 50% !important;
   box-shadow: 0 0 6px rgba(197, 160, 89, 0.9) !important;
+}
+
+@media (max-width: 991px) {
+  .capabilities-hero-section,
+  .projects-hero-section {
+    min-height: 440px !important;
+    padding: 3rem 0 !important;
+  }
+  .capabilities-hero-section .capabilities-hero-img,
+  .projects-hero-section .projects-hero-img {
+    right: 50% !important;
+    transform: translate(50%, -50%) !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
 }
