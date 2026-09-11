@@ -1,0 +1,10 @@
+# Cloudflare Pages / Static deployment asset ignore
+.git/
+.agent/
+node_modules/
+.vscode/
+.idea/
+*.log
+*.tmp*
+package.json
+package-lock.json
